@@ -1,4 +1,4 @@
-resource "databricks_metastore_assignment" "this" {
+resource "databricks_metastore_assignment" "example" {
   provider             = databricks.accounts
   workspace_id         = local.databricks_workspace_id
   metastore_id         = databricks_metastore.this.id

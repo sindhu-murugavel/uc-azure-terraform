@@ -1,7 +1,7 @@
 resource "azurerm_databricks_access_connector" "unity" {
   name                = "${local.prefix}-databricks-mi"
-  resource_group_name = data.azurerm_resource_group.this.name
-  location            = data.azurerm_resource_group.this.location
+  resource_group_name = data.azurerm_resource_group.existing_rg.name
+  location            = data.azurerm_resource_group.existing_rg.location
   identity {
     type = "SystemAssigned"
   }
