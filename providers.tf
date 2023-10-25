@@ -15,9 +15,14 @@ provider "azurerm" {
 }
 
 provider "databricks" {
-  alias = "accounts"
-  host  = "https://accounts.azuredatabricks.net"
+  alias      = "accounts"
+  host       = "https://accounts.azuredatabricks.net"
   account_id = var.account_id
 }
 
+provider "databricks" {
+  alias = "workspace"
+  host  = data.azurerm_databricks_workspace.this.workspace_url
+
+}
 
